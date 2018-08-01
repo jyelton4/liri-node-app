@@ -6,7 +6,7 @@ var DoStuff = function (cb) {
     
     this.readFile = () => fs.readFile("./random.txt", "utf8", (err, data) => {
         if (err) throw err;
-        cb(data.split(', '));
+        cb(data.split(','));
     });
 }
 

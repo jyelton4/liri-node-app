@@ -9,15 +9,21 @@ const Twitter = require("twitter");
 const twitter = new Twitter(keys.twitter);
 
 // my-tweets
-var TwitterSearch = function () {
+var TwitterSearch = function (cb) {
 
-    this.params = {screen_name: 'nodejs'};
+    this.params = {screen_name: 'AlbertEllingwo1'};
 
     this.findTweets = () => {
         twitter.get("statuses/user_timeline", this.params, (err, tweets, response) => {
             if (err) throw err;
-            console.log(tweets);
-            // cb(logData);
+            tweets.forEach(function(item) {
+                var logData = [
+                    "Tweet: " + item.text, 
+                    "Tweeted: " + item.created_at.slice(0,20)
+                ].join("\n");
+                console.log(logData);
+                cb("./log.txt", logData);
+            })
         });
     }
 };

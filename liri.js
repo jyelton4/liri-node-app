@@ -14,17 +14,17 @@ const Config = require("./config.js");
 var logger = new Logger();
 
 // cmd line args
-var program = process.argv[2];
+var mod = process.argv[2];
 var term = process.argv.slice(3).join("+");
 
-// do-what-it-says handler, can use config.js to run any program/term
-if (program === "do-what-it-says") {
+// do-what-it-says handler, can use config.js to run any module/term
+if (mod === "do-what-it-says") {
     var config = new Config (function(val) { 
         runLIRI(val[0], val[1]);
     })
     config.readFile();
 } else {
-    runLIRI(program,term);
+    runLIRI(mod,term);
 };
 
 // runLIRI function
