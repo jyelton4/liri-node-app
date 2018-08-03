@@ -2,6 +2,8 @@
 // import request npm package
 const request = require("request");
 
+// CODE REVIEW: apiKey should not be part of the url, should use keys.js/.env
+// consider breaking up request callback by calling JSON.parse(), then a formatData() method
 // OMDb API call constructor
 const OMDb = function (cb) {
     

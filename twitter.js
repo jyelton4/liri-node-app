@@ -8,6 +8,7 @@ const Twitter = require("twitter");
 // create spotify and twitter services
 const twitter = new Twitter(keys.twitter);
 
+// CODE REVIEW: although not as similar as news-api and ombd, we could still abstract this out
 // my-tweets
 var TwitterSearch = function (cb) {
 
