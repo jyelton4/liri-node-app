@@ -18,6 +18,7 @@ var mod = process.argv[2];
 var term = process.argv.slice(3).join("+");
 
 // do-what-it-says handler, can use config.js to run any module/term
+// CODE REVIEW: This could just be another in runLiri  node liri from-file ./random.txt
 if (mod === "do-what-it-says") {
     var config = new Config (function(val) { 
         runLIRI(val[0], val[1]);
@@ -27,6 +28,7 @@ if (mod === "do-what-it-says") {
     runLIRI(mod,term);
 };
 
+// CODE REVIEW: argument names could be more descriptive
 // runLIRI function
 function runLIRI(arg1, arg2) {
     if (arg1 === "my-tweets") {

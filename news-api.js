@@ -2,6 +2,7 @@
 // import request npm package
 const request = require("request");
 
+// CODE REVIEW: both this module and ombdb have similar structure, we can reduce duplication with abstraction
 // create NewsAPI service
 const News = function (cb) {
 
